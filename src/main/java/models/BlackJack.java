@@ -10,6 +10,7 @@ import java.util.Random;
 public class BlackJack {
 
 
+
     public List<Card> getDeck () {
 
         List<Card> deck = new ArrayList<Card>();
@@ -43,22 +44,29 @@ public class BlackJack {
         Integer value;
         int sum = 0;
         for ( Card card : hand) {
-            System.out.println("Card "+card.face);
-            if ( card.face.charAt(0) == 'J' ||
-                    card.face.charAt(0) =='Q' ||
-                    card.face.charAt(0) == 'K' ) {
+            if ( card.getFace().charAt(0) == 'A'){
+                value = 11;
+            } else if ( card.getFace().charAt(0) == 'J' ||
+                        card.getFace().charAt(0) =='Q' ||
+                        card.getFace().charAt(0) == 'K' ) {
                 value = 10;
             } else {
                 //for 1-10
-                value = Integer.parseInt(card.face);
+                value = Integer.parseInt(card.getFace());
             }
-            System.out.println("Value of card " + value);
             sum += value;
 
         }
         return sum;
-        //we need a getter for this ^
-    }
 
+    }
+    public String getHandAsString(List<Card>hand){
+        String cardString = "";
+        for (int i = 0; i < hand.size(); i++) {
+             cardString = cardString + "Card" + i + ": " + hand.get(i).getFace() +" of "+ hand.get(i).getSuit()+ "      ";
+        }
+        cardString = cardString + "   Total : " + getTotal(hand);
+        return cardString;
+    }
 
 }
