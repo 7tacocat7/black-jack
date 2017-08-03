@@ -69,4 +69,35 @@ public class BlackJack {
         return cardString;
     }
 
+    public String checkHand (List<Card> hand) {
+        String status;
+        if (getTotal(hand) == 21 ) {
+            status = "blackjack";
+        } else if (getTotal(hand) > 21) {
+            status = "bust";
+        } else {
+            status ="userFeedback";
+        }
+        return status;
+    }
+
+//    public String checkHand ( List<Card> hand){
+//
+//        boolean yourHandisActive= true;
+//
+//                if (getTotal(hand) == 21 ) {
+//                    yourHandisActive = false;
+//                } else if (getTotal(hand) > 21) {
+//                    yourHandisActive = false;
+//                }else {
+//                    if (userOption.equalsIgnoreCase("hit")) {
+//                        hand.add(dealRandomCard());
+//                    } else {
+//                        yourHandisActive = false;
+//                    }
+//                }
+//            return yourHandisActive;
+//    }
+
+
 }
