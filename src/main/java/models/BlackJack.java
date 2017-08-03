@@ -9,16 +9,14 @@ import java.util.List;
 public class BlackJack {
 
 
-
     public List<Card> getDeck () {
 
         List<Card> deck = new ArrayList<Card>();
-        String [] suits = {""};
+        String [] suits = {"Spades","Hearts","Clubs","Diamonds"};
         String [] faces = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
 
         for (String suit: suits) {
             for (String face : faces) {
-                System.out.println("new card" + face);
                 Card newCard = new Card(suit, face);
                 deck.add(newCard);
             }
