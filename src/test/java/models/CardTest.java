@@ -16,12 +16,18 @@ public class CardTest {
     }
 
     @Test
-    public void getDeck_create52UniqueCards() throws Exception{
+    public void getDeck_create52UniqueCards_String() throws Exception{
         BlackJack testBlackJack = new BlackJack ();
         String actualValue = testBlackJack.getDeck().get(0).suit;
         String actualValue2 = testBlackJack.getDeck().get(51).suit;
         assertEquals("Spades", actualValue );
         assertEquals("Diamonds", actualValue2 );
+    }
+    @Test
+    public void dealRandomCard_returnsACard_Boolean() throws Exception{
+        BlackJack testBlackJack = new BlackJack ();
+        assertEquals(true, testBlackJack.dealRandomCard() instanceof Card);
+
     }
 
 }

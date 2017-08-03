@@ -2,6 +2,7 @@ package models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Guest on 8/3/17.
@@ -23,4 +24,12 @@ public class BlackJack {
         }
         return deck;
     }
+
+    public Card dealRandomCard (){
+        List<Card> dealersDeck = getDeck();
+        Random myRandomCardGenerator = new Random();
+        int randomIndex = myRandomCardGenerator.nextInt(52);
+        return dealersDeck.get(randomIndex);
+    }
+
 }
