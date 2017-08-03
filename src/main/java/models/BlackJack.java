@@ -32,4 +32,12 @@ public class BlackJack {
         return dealersDeck.get(randomIndex);
     }
 
+    public List<Card> dealFirst2Cards () {
+        List<Card> hand = new ArrayList<>();
+        hand.add(dealRandomCard());
+        //hand.add(dealRandomCard());
+        return hand;
+    }
+
+
 }

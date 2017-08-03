@@ -29,5 +29,10 @@ public class CardTest {
         assertEquals(true, testBlackJack.dealRandomCard() instanceof Card);
 
     }
+    @Test
+    public void dealFirst2Cards_Integer() throws Exception {
+        BlackJack testBlackJack = new BlackJack ();
+        assertEquals(2, testBlackJack.dealFirst2Cards().size());
+    }
 
 }
