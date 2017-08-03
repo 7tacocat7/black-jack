@@ -35,8 +35,29 @@ public class BlackJack {
     public List<Card> dealFirst2Cards () {
         List<Card> hand = new ArrayList<>();
         hand.add(dealRandomCard());
-        //hand.add(dealRandomCard());
+        hand.add(dealRandomCard());
         return hand;
+    }
+
+    public Integer getTotal (List<Card> hand) {
+        Integer value;
+        int sum = 0;
+        for ( Card card : hand) {
+            System.out.println("Card "+card.face);
+            if ( card.face.charAt(0) == 'J' ||
+                    card.face.charAt(0) =='Q' ||
+                    card.face.charAt(0) == 'K' ) {
+                value = 10;
+            } else {
+                //for 1-10
+                value = Integer.parseInt(card.face);
+            }
+            System.out.println("Value of card " + value);
+            sum += value;
+
+        }
+        return sum;
+        //we need a getter for this ^
     }
 
 

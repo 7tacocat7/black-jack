@@ -5,7 +5,7 @@ package models;
  */
 public class Card {
     public String suit;
-    private String face;
+    public String face;
 
 
     public Card(String suit, String face ){

@@ -2,6 +2,9 @@ package models;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -34,5 +37,17 @@ public class CardTest {
         BlackJack testBlackJack = new BlackJack ();
         assertEquals(2, testBlackJack.dealFirst2Cards().size());
     }
+    @Test
+    public void getTotal_Integer() throws Exception {
+        BlackJack testBlackJack = new BlackJack ();
+        Card testCard1 = new Card ("Spades","K");
+        List<Card> testHand = new ArrayList<>();
+        testHand.add(testCard1);
+        Card testCard2 = new Card ("Hearts","9");
+        testHand.add(testCard2);
+        Integer expected = 19;
+        assertEquals (expected, testBlackJack.getTotal(testHand) );
+    }
+
 
 }
