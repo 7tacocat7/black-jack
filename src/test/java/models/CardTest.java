@@ -9,7 +9,6 @@ import static org.junit.Assert.*;
  */
 public class CardTest {
 
-
     @Test
     public void newCard_instantiatesCorrectly() throws Exception{
         Card testCard = new Card ("spade","2",2);

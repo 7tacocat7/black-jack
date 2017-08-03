@@ -10,6 +10,9 @@ public class Card {
 
 
     public Card(String suit, String face,Integer value ){
+        this.suit = suit;
+        this.face = face;
+        this.value = value;
 
     }
 
